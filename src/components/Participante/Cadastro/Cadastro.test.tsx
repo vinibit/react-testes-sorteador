@@ -1,10 +1,10 @@
 import { act, fireEvent, render, screen } from "@testing-library/react"
 import { RecoilRoot } from "recoil"
-import Form from "./Form"
+import Cadastro from "./Cadastro"
 
 const component = (
     <RecoilRoot>        
-        <Form />
+        <Cadastro />
     </RecoilRoot>
 )
 const placeholderText = "Insira o nome dos participantes"
@@ -89,5 +89,5 @@ describe("Testes de comportamento do Form", () => {
         mensagemErro = screen.queryByRole("alert");
         expect(mensagemErro).toBeNull();
         
-    });
+    })
 })

@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
 import { RecoilRoot } from 'recoil';
 
-import Header from './components/Header/Header';
-import Form from './components/Form';
+import Header from "./components/Header/Header";
+import Cadastro from "./components/Participante/Cadastro/Cadastro";
 
 function App() {
     return (        
@@ -11,7 +11,7 @@ function App() {
             <BrowserRouter>
                 <RecoilRoot>
                     <Routes>
-                        <Route path="/" element={<Form />} />
+                        <Route path="/" element={<Cadastro />} />
                     </Routes>
                 </RecoilRoot>                           
             </BrowserRouter>

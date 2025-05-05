@@ -1,9 +1,9 @@
-import { useRef, useState } from 'react'
-import { useAdicionaParticipante } from '../state/hooks/useAdicionaParticipante';
-import { useErro } from '../state/hooks/useErro';
+import { useRef, useState } from "react"
 
+import { useAdicionaParticipante } from "../../../state/hooks/useAdicionaParticipante";
+import { useErro } from "../../../state/hooks/useErro"
 
-const Form: React.FC = () => {
+const Cadastro: React.FC = () => {
     
     const [name, setName] = useState("")
     const nameRef = useRef<HTMLInputElement>(null)
@@ -47,4 +47,4 @@ const Form: React.FC = () => {
     );
 };
 
-export default Form;
+export default Cadastro;
