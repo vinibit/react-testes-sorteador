@@ -1,9 +1,14 @@
 import { atom } from "recoil";
 import Participante from "../types/Participante";
 
-const listaParticipantes = atom<Participante[]>({
-    key: 'listaParticipantes',
+const listaParticipantesState = atom<Participante[]>({
+    key: "listaParticipantesState",
     default: []
 })
 
-export default listaParticipantes
+const erroState = atom<string>({
+    key: "erroState",
+    default: ""
+})
+
+export {  listaParticipantesState, erroState }

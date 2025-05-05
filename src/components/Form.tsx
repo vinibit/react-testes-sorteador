@@ -1,35 +1,48 @@
-import React, { useState } from 'react';
+import { useRef, useState } from 'react'
+import { useAdicionaParticipante } from '../state/hooks/useAdicionaParticipante';
+import { useErro } from '../state/hooks/useErro';
 
-interface FormProps {
-    onSubmit: (name: string) => void;
-}
 
 const Form: React.FC = () => {
-    const [name, setName] = useState('');
+    
+    const [name, setName] = useState("")
+    const nameRef = useRef<HTMLInputElement>(null)
 
-    const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
+    const adicionar = useAdicionaParticipante()
+    const erro = useErro()
+
+    const adicionaParticipante = (e: React.FormEvent) => {
+        e.preventDefault()
         if (name.trim()) {
-            // onSubmit(name);
-            setName('');
+            adicionar(name)
+            setName("")
         }
+        nameRef.current?.focus()
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={adicionaParticipante}>
             <div>
                 <label htmlFor="name">Name:</label>
                 <input
+                    ref={nameRef}
                     id="name"
                     type="text"
                     value={name}
                     placeholder="Insira o nome dos participantes"
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={e => setName(e.target.value)}
                 />
             </div>
-            <button type="submit" disabled={true}>
-                Submit
+            <button type="submit" disabled={!name}>
+                Adicionar
             </button>
+            {
+                erro && 
+                <p role="alert" 
+                    style={{ color: 'red' }}>
+                        {erro}
+                </p>
+            }
         </form>
     );
 };
