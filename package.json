@@ -3,19 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.1",
-    "@types/node": "^16.11.26",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
     "just-shuffle": "^4.0.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-router": "^7.5.3",
     "react-scripts": "5.0.0",
-    "recoil": "^0.6.1"
+    "recoil": "^0.7.7"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,6 +36,13 @@
   },
   "packageManager": "npm@11.2.0+sha512.3dc9c50ba813a3d54393155a435fe66404b72685ab0e3008f9ae9ed8d81f6104860f07ed2656dd5748c1322d95f3140fa9b19c59a6bba7750fd12285f81866da",
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^15.0.7",
+    "@testing-library/user-event": "13.5",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.126",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.7",
+    "typescript": "^3.2.1"
   }
 }
