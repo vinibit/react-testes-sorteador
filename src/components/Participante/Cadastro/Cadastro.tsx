@@ -8,7 +8,7 @@ import { useErro } from "../../../state/hooks/useErro"
 const Cadastro: React.FC = () => {
     
     const [name, setName] = useState("")
-    const nameRef = useRef<HTMLInputElement>(null)
+    const nameRef = useRef<HTMLInputElement | null>(null)
 
     const adicionar = useAdicionaParticipante()
     const erro = useErro()
@@ -19,7 +19,8 @@ const Cadastro: React.FC = () => {
             adicionar(name)
             setName("")
         }
-        //nameRef.current?.focus()
+        const el = nameRef.current
+        if (el) el.focus()        
     };
 
     return (

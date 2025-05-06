@@ -6,9 +6,14 @@ const listaParticipantesState = atom<Participante[]>({
     default: []
 })
 
+const resultadoSorteioState = atom<Map<string, Participante>>({
+    key: "resultadoSorteioState",
+    default: new Map<string, Participante>()
+})
+
 const erroState = atom<string>({
     key: "erroState",
     default: ""
 })
 
-export {  listaParticipantesState, erroState }
+export {  listaParticipantesState, resultadoSorteioState, erroState }

@@ -10,6 +10,9 @@ const component = (
         <Footer />
     </RecoilRoot>
 )
+const mockNavigate = jest.fn()
+const mockSorteio = jest.fn()
+
 
 jest.mock("../../state/hooks/useListaParticipante", () => {
     return {
@@ -17,7 +20,12 @@ jest.mock("../../state/hooks/useListaParticipante", () => {
     }
 })
 
-const mockNavigate = jest.fn()
+jest.mock("../../state/hooks/useSorteador", () => {
+    return {
+        useSorteador: () => mockSorteio        
+    }
+})
+
 jest.mock("react-router", () => {
     return {
         useNavigate: () => mockNavigate
@@ -69,5 +77,6 @@ describe("Quando existirem participantes suficientes", () => {
 
         expect(mockNavigate).toHaveBeenCalledTimes(1)
         expect(mockNavigate).toHaveBeenCalledWith("/sorteio")
+        expect(mockSorteio).toHaveBeenCalledTimes(1)
     })
 })

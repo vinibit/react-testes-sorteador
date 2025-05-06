@@ -1,11 +1,13 @@
 import styles from "./Footer.module.css"
 
-import { useNavigate } from "react-router";
-import { useListaParticipante } from "../../state/hooks/useListaParticipante";
+import { useNavigate } from "react-router"
+import { useListaParticipante } from "../../state/hooks/useListaParticipante"
+import { useSorteador } from "../../state/hooks/useSorteador"
 
 const Footer: React.FC = () => {
     
     const navigate = useNavigate()
+    const sortear = useSorteador()
     const participantes = useListaParticipante()
     const temParticipantesSuficientes = participantes.length >= 3
 
@@ -15,6 +17,7 @@ const Footer: React.FC = () => {
             return
         }
 
+        sortear()
         navigate("/sorteio")        
     }
 

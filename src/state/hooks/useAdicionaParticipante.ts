@@ -20,6 +20,6 @@ export const useAdicionaParticipante = () => {
 
         const id = Math.random().toString(36).substring(2, 9)
         const novoParticipante: Participante = { id, nome }
-        return setListaParticipantes(listaAtual => [ ...listaAtual, novoParticipante])
+        setListaParticipantes(listaAtual => [ ...listaAtual, novoParticipante])
     }    
 }
