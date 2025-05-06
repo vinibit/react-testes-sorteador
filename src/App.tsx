@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router';
 import { RecoilRoot } from 'recoil';
 
 import Header from "./components/Header/Header";
-import Cadastro from "./components/Participante/Cadastro/Cadastro";
+import Configuracao from "./pages/Configuracao";
 
 function App() {
     return (        
@@ -11,7 +11,7 @@ function App() {
             <BrowserRouter>
                 <RecoilRoot>
                     <Routes>
-                        <Route path="/" element={<Cadastro />} />
+                        <Route path="/" element={<Configuracao />} />
                     </Routes>
                 </RecoilRoot>                           
             </BrowserRouter>

@@ -1,6 +1,8 @@
+import styles from "./Cadastro.module.css"
+
 import { useRef, useState } from "react"
 
-import { useAdicionaParticipante } from "../../../state/hooks/useAdicionaParticipante";
+import { useAdicionaParticipante } from "../../../state/hooks/useAdicionaParticipante"
 import { useErro } from "../../../state/hooks/useErro"
 
 const Cadastro: React.FC = () => {
@@ -17,34 +19,32 @@ const Cadastro: React.FC = () => {
             adicionar(name)
             setName("")
         }
-        nameRef.current?.focus()
+        //nameRef.current?.focus()
     };
 
     return (
         <form onSubmit={adicionaParticipante}>
-            <div>
-                <label htmlFor="name">Name:</label>
+            <div className={styles.grupoInputBotaoCadastro}>                
                 <input
-                    ref={nameRef}
-                    id="name"
                     type="text"
+                    className={styles.inputNome}
+                    ref={nameRef}                    
                     value={name}
                     placeholder="Insira o nome dos participantes"
                     onChange={e => setName(e.target.value)}
                 />
+                <button type="submit" disabled={!name}>
+                    Adicionar
+                </button>
             </div>
-            <button type="submit" disabled={!name}>
-                Adicionar
-            </button>
             {
                 erro && 
-                <p role="alert" 
-                    style={{ color: 'red' }}>
+                    <p role="alert" className={styles.erro}>                    
                         {erro}
-                </p>
+                    </p>
             }
         </form>
-    );
-};
+    )
+}
 
-export default Cadastro;
+export default Cadastro

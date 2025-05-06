@@ -1,3 +1,5 @@
+import styles from "./Footer.module.css"
+
 import { useNavigate } from "react-router";
 import { useListaParticipante } from "../../state/hooks/useListaParticipante";
 
@@ -17,13 +19,18 @@ const Footer: React.FC = () => {
     }
 
     return (
-        <footer>
-            <button type="button" disabled={!temParticipantesSuficientes} 
-                onClick={iniciar}>
+        <footer className={styles.footer}>
+            <button 
+                type="button"
+                className={styles.botaoIniciar}
+                disabled={!temParticipantesSuficientes} 
+                onClick={iniciar}>                    
+                    <span className="material-icons">play_circle_outline</span>
                     Iniciar brincadeira
             </button>
+            <img src="/imagens/sacolas.png" alt="Sacolas de compras" />
         </footer>
-    );
+    )
 }
 
 export default Footer
