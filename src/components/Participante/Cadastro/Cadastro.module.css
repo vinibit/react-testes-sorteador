@@ -41,7 +41,7 @@
     cursor: not-allowed;
 }
 
-.alerta .erro {
+.erro {
     color: #842029;
     background-color: #f8d7da;
     padding: 16px;

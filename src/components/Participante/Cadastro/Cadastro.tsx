@@ -40,7 +40,7 @@ const Cadastro: React.FC = () => {
             </div>
             {
                 erro && 
-                    <p role="alert" className={styles.erro}>                    
+                    <p role="alert" className={styles.alerta + " " + styles.erro}>                    
                         {erro}
                     </p>
             }
