@@ -34,7 +34,7 @@ const Cadastro: React.FC = () => {
                     placeholder="Insira o nome dos participantes"
                     onChange={e => setName(e.target.value)}
                 />
-                <button type="submit" disabled={!name}>
+                <button type="submit" disabled={!name} data-testid="botao-adicionar">
                     Adicionar
                 </button>
             </div>
