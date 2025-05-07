@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router';
 import { RecoilRoot } from 'recoil';
 
 import Header from "./components/Header/Header";
-import Configuracao from "./pages/Configuracao";
+import Configuracao from "./pages/Configuracao/Configuracao";
 import Sorteio from './pages/Sorteio/Sorteio';
 
 function App() {
